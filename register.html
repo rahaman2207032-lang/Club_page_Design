@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+   <video autoplay muted loop playsinline id="bg-video">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <form  action="/actionpage.php" method="post">
+  <div class="logincontainer">   
+      <h1 align="center" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Register</h1>   
+     <label for="fname" class="tag">First Name:</label>
+     <input type="text" id="fname" name="fname" class="inp"><br><br>
+     <label for="lname" class="tag">Last Name:</label>
+     <input type="text" id="lname" name="lname" class="inp"><br><br>
+     <label for="email" class="tag">Email:</label>
+     <input type ="email" id="email" name="email" class="inp"><br><br>
+     <label for="password" class="tag">Password:</label>
+     <input type ="password" id="password" name="password" class="inp"><br><br>
+     <label for="gender" class="tag">Gender:</label>    
+     <input type="radio" id="male" name="gender" value="male">
+        <label for="male" class="tag">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female" class="tag">Female</label> <br><br>
+    <label for="education" class="tag">Qualification:</label>
+    <select name="education" id="education">
+        <option value="beg">Beginner</option>
+        <option value="inter">Intermediate</option>
+        <option value="exp">Expert</option>
+    </select>
+        <br><br>
+    <label for="Mobile" class="tag">Mobile:</label>
+     <input type ="text" id="Mobile" name="Mobile" class="inp"><br><br>
+        <label for="dob" class="tag">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" class="inp"><br><br>
+        <label for="image" class="tag">Upload your image:</label>
+        <input type="file" id="image" name="image"><br><br>
+        <br>
+     <label for="submit" class="tag"></label>
+     <input type ="submit" value ="Submit" class="button">
+
+    </form>
+</div>
+</body>
+</html>

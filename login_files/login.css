@@ -1,0 +1,97 @@
+/* 1. Global Reset and Centering */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Prevents scrollbars if the video/image shifts */
+}
+
+/* 2. Background Layer (Image or Video) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./login.jpg"); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center; /* Fixed the 'cover' typo here */
+    opacity: 1;  
+    z-index: -1;
+}
+
+/* 3. The Transparent Login Container */
+.logincontainer {
+    padding: 50px 80px;
+    /* Transparent white background */
+    background: rgba(255, 255, 255, 0.15); 
+    
+    /* The Glassmorphism Effect */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    
+    /* Border to define the edges of the box */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px; 
+    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* 4. Text and Labels */
+.tag {
+    color: #ffffff; /* White text looks better on dark transparent boxes */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-size: 0.95em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 5. Input Fields */
+.inp {
+    width: stretch;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white; /* Text color inside the input */
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Change input appearance when clicking */
+.inp:focus {
+    border-color: #acc3e2;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 6. The Centered Button */
+.button {
+    width: 100%; /* Full width looks more modern in a card */
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #061524; 
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #061524, #d5c9d4); /* Gradient on hover * background-color can only handle a single, solid color (like red or #000). It cannot handle a gradient. To use a gradient, you must use the background or background-image property.*/ 
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
