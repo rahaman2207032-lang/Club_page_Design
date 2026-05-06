@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Research & Innovation Club</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav class="navbar">
+      
+     <div class="logo"><h2>Research & Innovation Club</h2></div>
+
+     <input type="checkbox" id="nav-toggle">
+     <label for="nav-toggle" class="hm-menu">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+     </label>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+         <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About Us</a></li>   
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+
+    </ul>
+    </nav>
+
+    <section class="hero-section">
+        <h1>Our Projects</h1>
+        <p class="subtitle">Showcasing innovative solutions and groundbreaking research</p>
+    </section>
+
+    <section class="featured-project">
+        <h2>Featured Project</h2>
+        <div class="featured-card">
+            <!-- Placeholder for featured project image and content -->
+              <div class="featured-image"></div>
+                  
+              <div class="featured-content">
+                <h3>Smart Healthcare Monitoring System</h3>
+                <p class="featured-description">
+                    An AI-powered IoT solution that monitors patient health in real-time using wearable sensors 
+                    and machine learning algorithms. The system can predict health anomalies 24 hours in advance 
+                    with 95% accuracy.    
+                </p>
+                <!-- Key statistics about the project -->
+                 <div class="featured-stats">
+                    <!-- Team size stat -->
+                      <div class="stat">
+                         <h4>Team Size</h4>
+                            <p>8 members</p>
+                    </div>
+                    <!-- Duration stat -->
+                    <div class="stat">
+                        <h4>Duration</h4>
+                        <p>6 months</p>
+                    </div>
+                    <!--Project status stat-->
+                    <div class="stat">
+                        <h4>Status</h4>
+                        <p>Completed</p>
+                    </div>
+                </div>
+                <!--Technologies Used-->
+                <div class="featured-tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Health Care</span>
+                    <span class="tag">Python</span>
+                </div>
+                <div class="featured-buttons">
+                    <button class="btn-primary">View Details</button>
+                    <button class="btn-secondary">GitHub Repository</button>
+                </div>"
+            </div>    
+        </div>
+    </section>
+
+    <!--All Projects--Grid Display-->
+<section class="project-section">
+    <h2>All Projects</h2>
+    <div class="stack-wrapper">
+      <div class="card-stack" id="project-stack"> 
+        <div class="project-card active">
+            <div class="card-inner">
+            <div class="card-front">
+            <div class="project-image" style="background-image: url(./image/facial.jpg);"></div>
+            <div class="project-content">
+                <h3>Facial Recognition Security System</h3>
+                <p class="project-desc">
+                    Advanced facial recognition using deep learning for secure access control and surveillance.</p>
+                <div class="project-meta">
+                    <span class="status completed">Completed</span>
+                    <span class="team">Team: 5 Members</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">OpenCV</span>
+                </div>
+                <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                 <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>
+            <div class="card-back">
+              <div class="project-content">
+                <h3>Project Details</h3>
+                <div class="project-links">
+                    <a href="#" class="link-btn">Learn More</a>
+                    <a href="#" class="link-btn">GitHub</a>
+                </div>
+                 <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+              </div>
+            </div>   
+        </div>
+    </div>
+
+
+        <div class="project-card">
+            <div class="card-inner">
+            <div class="card-front">  
+            <div class="project-image" style="background-image: url(./image/Agri.jpg);"></div>
+            <div class="project-content">
+                <h3>Smart Agricultural System</h3>
+                <p class="project-desc">
+                    IoT-based solution for automated crop monitoring, irrigation, and soil analysis.</p>
+                <div class="project-meta">
+                    <span class="status ongoing">Ongoing</span>
+                    <span class="team">Team: 6 Members</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Arduino</span>
+                    <span class="tag">Sensors</span>
+                    <span class="tag">Node.js</span>
+                </div>
+                <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                 <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>
+            <div class="card-back">
+              <div class="project-content">
+                <h3>Project Details</h3>
+                <div class="project-links">
+                    <a href="#" class="link-btn">Learn More</a>
+                    <a href="#" class="link-btn">GitHub</a>
+                </div>
+                 <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+              </div>
+            </div>     
+        </div>
+        </div>
+        <div class="project-card">
+                <div class="card-inner">
+                <div class="card-front">
+            <div class="project-image" style="background-image: url(./image/col.jpg);"></div>
+            <div class="project-content">
+                <h3>Real-time Collaboration Platform</h3>
+                <p class="project-desc">Web platform enabling real-time collaboration for remote teams with live editing and video conferencing.</p>
+              <div class="project-meta">
+                <span class="status completed">Completed</span>
+                <span class="team">Team: 7 Members</span>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">WebSocket</span>   
+                <span class="tag">MongoDB</span>
+
+              </div>
+                <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                 <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>
+            <div class="card-back">
+              <div class="project-content">
+                <h3>Project Details</h3>
+                 <div class="project-links">
+                    <a href="#" class="link-btn">Learn More</a>
+                    <a href="#" class="link-btn">GitHub</a>
+                </div>
+                 <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+            </div>
+           </div>
+        </div>
+        </div>
+                <!-- Project Card 4: Fitness Tracking App -->
+        <div class="project-card">
+         <div class="card-inner">
+            <div class="card-front">
+            <div class="project-image" style="background-image: url(./image/fit.jpg);"></div>
+            <div class="project-content">
+                <h3>Fitness Tracking App</h3>
+                <p class="project-desc">Cross-platform mobile app for tracking fitness, nutrition, and providing AI-powered workout recommendations.</p>
+                <div class="project-meta">
+                    <span class="status completed">Completed</span>
+                    <span class="team">Team: 4 Members</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">ML Kit</span>
+                </div>
+                <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                 <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>
+            <div class="card-back">
+              <div class="project-content">
+                <h3>Project Details</h3>
+                <div class="project-links">
+                    <a href="#" class="link-btn">Learn More</a>
+                    <a href="#" class="link-btn">GitHub</a>
+                </div>
+                <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+              </div>
+            </div>
+        </div>
+        </div>
+         <!-- Project Card 5: Predictive Analytics Dashboard -->
+            <div class="project-card">
+                    <div class="card-inner">
+                    <div class="card-front">
+                <div class="project-image" style="background-image: url(./image/analytic.jpg);"></div>
+                <div class="project-content">
+                    <h3>Predictive Analytics Dashboard</h3>
+                    <p class="project-desc">Business intelligence tool using advanced analytics to predict market trends and customer behavior.</p>
+                    <div class="project-meta">
+                        <span class="status ongoing">Ongoing</span>
+                        <span class="team">Team: 5 Members</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Power BI</span>
+                    </div>
+                        <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                        <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>
+            <div class="card-back">
+              <div class="project-content">
+                    <div class="project-links">
+                        <a href="#" class="link-btn">Learn More</a>
+                        <a href="#" class="link-btn">GitHub</a>
+                    </div>
+                    <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+              </div>
+                </div>
+            </div>
+            </div>
+            <!-- Project Card 6: NLP Chatbot -->
+            <div class="project-card">
+                    <div class="card-inner">
+                    <div class="card-front">
+                <div class="project-image" style="background-image: url(./image/nl.jpg);"></div>
+                <div class="project-content">
+                    <h3>Natural Language Processing Chatbot</h3>
+                    <p class="project-desc">Intelligent chatbot using NLP and transformers for customer support and information retrieval.</p>
+                    <div class="project-meta">
+                        <span class="status completed">Completed</span>
+                        <span class="team">Team: 4 Members</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">BERT</span>
+                        <span class="tag">Flask</span>
+                    </div>
+                        <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                        <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>  
+            <div class="card-back">
+              <div class="project-content">
+                    <div class="project-links">
+                        <a href="#" class="link-btn">Learn More</a>
+                        <a href="#" class="link-btn">GitHub</a>
+                    </div>
+                    <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+              </div> 
+                </div>
+            </div>
+            </div>
+            <!-- Project Card 7: E-Learning Management System -->
+            <div class="project-card">
+                <div class="card-inner">
+                <div class="card-front">
+                <div class="project-image" style="background-image: url(./image/elearning.jpg);"></div>
+                <div class="project-content">
+                    <h3>E-Learning Management System</h3>
+                    <p class="project-desc">Full-stack web application for online education with course management, progress tracking, and interactive quizzes.</p>
+                    <div class="project-meta">
+                        <span class="status ongoing">Ongoing</span>
+                        <span class="team">Team: 8 Members</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                        <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                        <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>
+            <div class="card-back">
+              <div class="project-content">
+                    <div class="project-links">
+                        <a href="#" class="link-btn">Learn More</a>
+                        <a href="#" class="link-btn">GitHub</a>
+                    </div>
+                    <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+              </div> 
+            </div>
+            </div>
+            </div>
+            <!-- Project Card 8: Weather Prediction App -->
+            <div class="project-card">
+                    <div class="card-inner">
+                    <div class="card-front">
+                <div class="project-image" style="background-image: url(./image/weather.jpg);"></div>
+                <div class="project-content">
+                    <h3>Weather Prediction Mobile App</h3>
+                    <p class="project-desc">Real-time weather forecasting app with AI predictions and severe weather alerts.</p>
+                    <div class="project-meta">
+                        <span class="status completed">Completed</span>
+                        <span class="team">Team: 3 Members</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">API Integration</span>
+                        <span class="tag">AI</span>
+                    </div>
+                        <button class="interested-btn" onclick="flipCard(this)">Interested!</button>
+                        <button class="next-card-btn" onclick="nextCard()">Next Project →</button>
+            </div>
+            </div>
+            <div class="card-back">
+              <div class="project-content">
+                    <div class="project-links">
+                        <a href="#" class="link-btn">Learn More</a>
+                        <a href="#" class="link-btn">GitHub</a>
+                    </div>
+                    <button class="back-to-front" onclick="flipCard(this)">← Back to Project</button>
+              </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    </div>
+    
+</section>
+
+<section class="cta-section">
+    <h2>Want to Start Your Own Project?</h2>
+    <p>Join our club and collaborate on cutting-edge projects with passionate innovators</p>
+    <div class="cta-buttons">
+        <button class="btn-primary"><a href="register.html">Join Our Club</a></button>
+     </div> 
+</section>
+<footer>
+    <p>&copy; 2024 Research & Innovation Club. All rights reserved.</p>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
