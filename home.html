@@ -38,6 +38,51 @@
    
 </section>
 
+<!-- <section class="incubator-search">
+ <h2 class="section-title">Incubator Search</h2>
+ <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
+    <button class="filter-btn" data-filter="robotics">Robotics</button>
+    <button class="filter-btn" data-filter="environment">Environment</button>
+    <button class="filter-btn" data-filter="education">Education</button>
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+</section> -->
+
+    <section class="pulse-section">
+        <div class="pulse-container">
+            <div class="pulse-header">
+                <span class="pulse-dot"></span>
+                <h3>Research Pulse: Live Activity</h3>
+            </div>
+            <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-target="15">0</span>
+                <p>Active Projects</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="1200">0</span>
+                <p>Research Hours</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="8">0</span>
+                <p>Ongoing Patents</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
 <section class="quick-links-section">
     <div class="quick-links-container">
 
@@ -104,8 +149,8 @@
             </div>
 
         </div>
-
-        <footer class ="footer-divider"><!-- Footer -->
+   
+        <footer class="footer-divider"><!-- Footer -->
         
             <div class="footer-bottom">
                 <p>&copy; 2026 Research & Innovation Club, KUET. All rights reserved.</p>
@@ -119,42 +164,7 @@
     </section>
 
 
-<script>
-   const navLinks=document.querySelectorAll('.nav-links a');
-   const navToggle=document.querySelector('#nav-toggle');
-
-    navLinks.forEach(link =>{     //close menu when a link is clicked
-        link.addEventListener('click',() =>{
-            navToggle.checked=false;
-        });
-
-    });
-
-   // close menu when clicking outside of navigation
-
-   document.addEventListener('click',(event) =>{
-     const nav=document.querySelector('.nav');
-    const isClickInsideNav=nav.contains(event.target);
-
-     if(!isClickInsideNav && navToggle.checked){
-        navToggle.checked=false;
-     }
-
-   });
-
-   // set active link based on current page
-
-    const currentPage=window.location.pathname.split('/').pop() || 'home.html'; // default to home.html if pathname is empty
-   navLinks.forEach(link =>{
-     if(link.getAttribute('href')===currentPage){
-        link.classList.add('active');
-     }
-     else{
-        link.classList.remove('active');
-     }
-   });
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -186,6 +186,73 @@ body::after {
     margin-top: 50px;
 }
 
+.pulse-section{
+    padding : 60px 20px;
+    background:rgba(20,150,160,0.05);
+    border: 1px solid rgba(211, 127, 207, 0.1);
+    position: relative;
+    z-index: 10; /* Ensure it's above your carbon-fibre background */
+    min-height: 200px;
+    margin: 50px 0;
+    display: block !important;
+}
+
+.pulse-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.pulse-dot{
+    width:12px;
+    height: 12px;
+    background-color: #1496a0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #1496a0;
+    animation : heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1000px;
+    margin : 0 auto;
+    gap: 30px;
+}
+
+.stat-item{
+    text-align: center;
+    padding : 20px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+    border : 1px solid rgba(211,127,207,0.1);
+    
+}
+
+.stat-number{
+    font-size: 2.5 rem;
+    font-weight:bold;
+    display:block;
+    color: #d37fcf;
+}
+
 .quick-links-container{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
