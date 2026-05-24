@@ -27,7 +27,7 @@ body::after {
     pointer-events: none;
 }
 
-/* ========== NAVBAR - ALL SCREENS ========== */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -55,7 +55,7 @@ body::after {
     margin: 0;
 }
 
-/* ========== HAMBURGER MENU - ALL SCREENS ========== */
+
 #nav-toggle {
     display: none;
 }
@@ -89,7 +89,7 @@ body::after {
     transform: rotate(-45deg) translate(10px, -10px);
 }
 
-/* ========== NAVIGATION LINKS - ALL SCREENS ========== */
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -121,7 +121,7 @@ body::after {
     box-shadow: 0 0 15px rgba(211, 127, 207, 0.4);
 }
 
-/* ========== HERO SECTION - ALL SCREENS ========== */
+
 .hero-section {
     text-align: center;
     padding: 150px 20px 80px;
@@ -148,7 +148,7 @@ body::after {
     color: #a0d8e8;
 }
 
-/* ========== FEATURED PROJECT - ALL SCREENS ========== */
+
 .featured-project {
     padding: 80px 20px;
 }
@@ -298,7 +298,7 @@ body::after {
     transform: translateY(-2px);
 }
 
-/* ========== PROJECT SECTION - ALL SCREENS ========== */
+
 .project-section {
     padding: 80px 20px;
 }
@@ -439,13 +439,13 @@ body::after {
     flex-shrink: 0;
 }
 
-/* ========== DEFAULT PROJECT CONTENT (NO SCROLL) ========== */
+
 .project-content {
     padding: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden;  /* NO SCROLL for larger screens */
+    overflow: hidden; 
 }
 
 .project-content h3 {
@@ -539,7 +539,7 @@ body::after {
     transform: translateY(-2px);
 }
 
-/* ========== CTA SECTION - ALL SCREENS ========== */
+
 .cta-section {
     padding: 80px 20px;
     text-align: center;
@@ -575,7 +575,7 @@ body::after {
     font-size: 1rem;
 }
 
-/* ========== FOOTER - ALL SCREENS ========== */
+
 footer {
     text-align: center;
     padding: 30px 20px;
@@ -584,9 +584,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ╔════════════════════════════════════════════════════════════╗
-   ║           TABLET RESPONSIVE (768px and below)             ║
-   ╚════════════════════════════════════════════════════════════╝ */
+
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 30px;
@@ -728,10 +726,7 @@ footer {
     }
 }
 
-/* ╔════════════════════════════════════════════════════════════╗
-   ║        MOBILE RESPONSIVE (480px and below)                ║
-   ║  🎯 SCROLLABLE CARD CONTENT ONLY FOR SMALL SCREENS        ║
-   ╚════════════════════════════════════════════════════════════╝ */
+
 @media (max-width: 480px) {
     .navbar {
         padding: 12px 20px;
@@ -878,21 +873,19 @@ footer {
         min-height: 150px;
     }
 
-    /* ═══════════════════════════════════════════════════════════
-       🎯 ENABLE SCROLLABLE CONTENT FOR SCREENS < 480px
-       ═══════════════════════════════════════════════════════════ */
+   
     .project-content {
         padding: 15px;
         overflow-y: auto;  /* ← ENABLE SCROLL HERE */
         overflow-x: hidden;
         max-height: 250px;
         
-        /* Scrollbar styling for Firefox */
+
         scrollbar-width: thin;
         scrollbar-color: #d37fcf rgba(211, 127, 207, 0.1);
     }
 
-    /* Custom scrollbar styling for Chrome/Safari/Edge */
+  
     .project-content::-webkit-scrollbar {
         width: 6px;
     }
@@ -982,9 +975,7 @@ footer {
     }
 }
 
-/* ╔════════════════════════════════════════════════════════════╗
-   ║        EXTRA SMALL SCREENS (320px and below)             ║
-   ╚════════════════════════════════════════════════════════════╝ */
+
 @media (max-width: 320px) {
     .navbar {
         padding: 10px 15px;
@@ -1059,7 +1050,7 @@ footer {
         min-height: 120px;
     }
 
-    /* Keep scrolling for extra small screens */
+
     .project-content {
         padding: 12px;
         max-height: 220px;

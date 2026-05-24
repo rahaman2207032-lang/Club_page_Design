@@ -37,7 +37,7 @@
     <section class="featured-project">
         <h2>Featured Project</h2>
         <div class="featured-card">
-            <!-- Placeholder for featured project image and content -->
+        
               <div class="featured-image"></div>
                   
               <div class="featured-content">
@@ -47,19 +47,19 @@
                     and machine learning algorithms. The system can predict health anomalies 24 hours in advance 
                     with 95% accuracy.    
                 </p>
-                <!-- Key statistics about the project -->
+              
                  <div class="featured-stats">
                     <!-- Team size stat -->
                       <div class="stat">
                          <h4>Team Size</h4>
                             <p>8 members</p>
                     </div>
-                    <!-- Duration stat -->
+              
                     <div class="stat">
                         <h4>Duration</h4>
                         <p>6 months</p>
                     </div>
-                    <!--Project status stat-->
+                
                     <div class="stat">
                         <h4>Status</h4>
                         <p>Completed</p>
@@ -187,7 +187,7 @@
            </div>
         </div>
         </div>
-                <!-- Project Card 4: Fitness Tracking App -->
+             
         <div class="project-card">
          <div class="card-inner">
             <div class="card-front">
@@ -220,7 +220,7 @@
             </div>
         </div>
         </div>
-         <!-- Project Card 5: Predictive Analytics Dashboard -->
+     
             <div class="project-card">
                     <div class="card-inner">
                     <div class="card-front">
@@ -252,7 +252,7 @@
                 </div>
             </div>
             </div>
-            <!-- Project Card 6: NLP Chatbot -->
+          
             <div class="project-card">
                     <div class="card-inner">
                     <div class="card-front">
@@ -284,7 +284,7 @@
                 </div>
             </div>
             </div>
-            <!-- Project Card 7: E-Learning Management System -->
+            
             <div class="project-card">
                 <div class="card-inner">
                 <div class="card-front">
@@ -316,7 +316,7 @@
             </div>
             </div>
             </div>
-            <!-- Project Card 8: Weather Prediction App -->
+           
             <div class="project-card">
                     <div class="card-inner">
                     <div class="card-front">

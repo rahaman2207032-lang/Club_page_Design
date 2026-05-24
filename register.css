@@ -32,7 +32,8 @@ margin: 0;
 .logincontainer{
     padding : 40px;
    /* background: linear-gradient(url("./login.jpg")); */
-   
+    backdrop-filter: blur(5px);
+     background: rgba(255, 255, 255, 0.2);
     background-size: cover;
     background-position: center;
     border-radius : 8px;
