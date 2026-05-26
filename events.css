@@ -1,0 +1,811 @@
+*{
+    margin:0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #050a0f;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(20, 150, 160, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(211, 127, 207, 0.1) 0px, transparent 50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./image/carbon-fibre.png");
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ============================================
+   NAVIGATION BAR - WIDER VERSION
+   ============================================ */
+
+#nav-toggle {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    height: auto;
+    min-height: 70px;
+}
+
+.hm-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hm-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.logo{
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    flex-shrink: 0;
+}
+
+.logo h2 {
+    font-size: 1.4em;
+    margin : 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(to right, #1496a0, #d37fcf);
+     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(211, 127, 207, 0.3));
+    white-space: nowrap;
+}
+
+#nav-toggle:checked ~ .hm-menu span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+#nav-toggle:checked ~ .hm-menu span:nth-child(2) {
+    opacity: 0;
+}
+
+#nav-toggle:checked ~ .hm-menu span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    margin : 0;
+    padding : 0;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-links li{
+   margin : 0;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1.5px solid #d37fcf;
+    padding: 8px 22px;
+    border-radius: 20px;
+    display: block;
+    font-size: 1rem;
+}
+
+.nav-links a:hover,.nav-links a.active {
+    background: #d37fcf;
+    color: white;
+    box-shadow: 0 0 15px rgba(211, 127, 207, 0.4);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+    text-align: center;
+    padding: 100px 40px 80px;
+    margin-top: 70px;
+}
+
+.hero-section h1 {
+    font-size: 3.8rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(to right, #1496a0, #d37fcf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #a0d8e8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   UPCOMING EVENTS SECTION
+   ============================================ */
+
+.upcoming-events {
+    padding: 80px 50px;
+}
+
+.upcoming-events h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(to right, #1496a0, #d37fcf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: linear-gradient(135deg, rgba(20, 150, 160, 0.1), rgba(211, 127, 207, 0.1));
+    border: 1px solid rgba(211, 127, 207, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-12px);
+    border-color: #d37fcf;
+    box-shadow: 0 20px 40px rgba(211, 127, 207, 0.3);
+}
+
+.event-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #1496a0, #d37fcf);
+    opacity: 0.8;
+}
+
+.event-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #a0d8e8;
+}
+
+.event-category-badge {
+    display: inline-block;
+    background: #d37fcf;
+    color: #050a0f;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.event-category-badge.hackathon-badge {
+    background: #ff6b6b;
+}
+
+.event-category-badge.seminar-badge {
+    background: #4ecdc4;
+}
+
+.event-category-badge.networking-badge {
+    background: #ffa502;
+}
+
+.event-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.event-card > .event-content > p {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.event-details {
+    margin: 15px 0;
+    flex-grow: 1;
+}
+
+.event-details p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.event-details strong {
+    color: #d37fcf;
+}
+
+.register-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #1496a0, #d37fcf);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+.register-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(211, 127, 207, 0.4);
+}
+
+/* ============================================
+   PAST EVENTS SECTION
+   ============================================ */
+
+.past-events {
+    padding: 80px 50px;
+    background: linear-gradient(135deg, rgba(20, 150, 160, 0.05), rgba(211, 127, 207, 0.05));
+}
+
+.past-events h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(to right, #1496a0, #d37fcf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.past-events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.past-event {
+    background: linear-gradient(135deg, rgba(20, 150, 160, 0.15), rgba(211, 127, 207, 0.15));
+    border: 1px solid rgba(211, 127, 207, 0.4);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.past-event:hover {
+    transform: translateY(-10px);
+    border-color: #d37fcf;
+    box-shadow: 0 15px 35px rgba(211, 127, 207, 0.2);
+}
+
+.past-event h3 {
+    font-size: 1.3rem;
+    color: #d37fcf;
+    margin-bottom: 10px;
+}
+
+.past-event p {
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.past-event a {
+    color: #1496a0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.past-event a:hover {
+    color: #d37fcf;
+    border-bottom-color: #d37fcf;
+}
+
+/* ============================================
+   NEWSLETTER SUBSCRIPTION SECTION
+   ============================================ */
+
+.newsletter-section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.newsletter-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #1496a0, #d37fcf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.newsletter-section p {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 280px;
+    padding: 15px 20px;
+    border: 2px solid rgba(211, 127, 207, 0.3);
+    background: rgba(211, 127, 207, 0.05);
+    color: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: #d37fcf;
+    background: rgba(211, 127, 207, 0.1);
+}
+
+.newsletter-form input::placeholder {
+    color: #888;
+}
+
+.newsletter-form button {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #1496a0, #d37fcf);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(211, 127, 207, 0.4);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    text-align: center;
+    padding: 30px 50px;
+    border-top: 1px solid rgba(211, 127, 207, 0.2);
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (TABLET - 1024px and below)
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px){
+    .navbar {
+        padding: 12px 40px;
+    }
+
+    .logo h2 {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-links a {
+        padding: 7px 18px;
+        font-size: 0.95rem;
+    }
+
+    .hero-section {
+        padding: 80px 30px 60px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .upcoming-events,
+    .past-events,
+    .newsletter-section {
+        padding: 60px 40px;
+    }
+
+    .upcoming-events h2,
+    .past-events h2 {
+        font-size: 2.4rem;
+        margin-bottom: 45px;
+    }
+
+    .events-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (TABLET - 768px and below)
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px){
+    .navbar {
+        padding: 12px 25px;
+        min-height: 65px;
+    }
+
+    .hm-menu {
+        display: flex !important;
+    }
+
+    .hm-menu span {
+       width: 24px;
+       height: 2.5px;
+    }
+
+    .logo h2 {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background-color: rgba(5, 10, 15, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        z-index: 999;
+        
+        transform: translateX(-100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    #nav-toggle:checked ~ .nav-links {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        border: none;
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+        background: rgba(211, 127, 207, 0.2);
+        box-shadow: none;
+    }
+
+    .hero-section {
+        padding: 70px 25px 50px;
+        margin-top: 65px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 1.15rem;
+    }
+
+    .upcoming-events,
+    .past-events,
+    .newsletter-section {
+        padding: 50px 25px;
+    }
+
+    .upcoming-events h2,
+    .past-events h2,
+    .newsletter-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .events-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .past-events-container {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 25px 20px;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (MOBILE - 480px and below)
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 480px){
+    .navbar {
+        padding: 10px 20px;
+        min-height: 60px;
+    }
+
+    .logo h2 {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .hm-menu span {
+       width : 22px;
+       height : 2px;
+    }
+
+    .hero-section {
+        padding: 60px 18px 40px;
+        margin-top: 60px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .upcoming-events,
+    .past-events,
+    .newsletter-section {
+        padding: 40px 18px;
+    }
+
+    .upcoming-events h2,
+    .past-events h2,
+    .newsletter-section h2 {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .events-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .event-card {
+        border-radius: 12px;
+    }
+
+    .event-image {
+        height: 150px;
+    }
+
+    .event-content {
+        padding: 18px;
+    }
+
+    .event-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+    }
+
+    .event-card > .event-content > p {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .event-details p {
+        font-size: 0.85rem;
+    }
+
+    .register-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .past-event {
+        padding: 22px;
+    }
+
+    .past-event h3 {
+        font-size: 1.15rem;
+    }
+
+    .past-event p {
+        font-size: 0.9rem;
+    }
+
+    .newsletter-section p {
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        max-width: 100%;
+    }
+
+    .newsletter-form input {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .newsletter-form button {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        padding: 20px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (EXTRA SMALL - 320px and below)
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 320px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo h2 {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .hm-menu span {
+        width: 20px;
+        height: 1.5px;
+    }
+
+    .hero-section {
+        padding: 50px 12px 30px;
+        margin-top: 55px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .upcoming-events,
+    .past-events,
+    .newsletter-section {
+        padding: 30px 12px;
+    }
+
+    .upcoming-events h2,
+    .past-events h2,
+    .newsletter-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .events-container {
+        gap: 15px;
+    }
+
+    .event-image {
+        height: 130px;
+    }
+
+    .event-content {
+        padding: 15px;
+    }
+
+    .event-card h3 {
+        font-size: 1rem;
+    }
+
+    .past-event {
+        padding: 18px;
+    }
+
+    footer {
+        padding: 15px 10px;
+        font-size: 0.8rem;
+    }
+}
