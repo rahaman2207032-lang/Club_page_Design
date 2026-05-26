@@ -23,7 +23,7 @@
  
      <input type="checkbox" id="nav-toggle">
 
-     <!-- ✅ NAV LINKS COMES THIRD (will animate) -->
+   
      <ul class="nav-links">
         <li><a href="home.php">Home</a></li>
         <li><a href="projects.php">Projects</a></li>
@@ -34,52 +34,51 @@
     </ul>
 </nav>
 
-    <!-- Hero Section - Page Title and Description -->
+
     <section class="hero-section">
         <h1>Our Events</h1>
         <p class="subtitle">Join us for exciting workshops, seminars, and networking events</p>
     </section>
 
-    <!-- Upcoming Events Section -->
-    <!-- This section showcases all upcoming club events with full details -->
+
     <section class="upcoming-events">
         <h2>Upcoming Events</h2>
         <div class="events-container">
-            <!-- Event Card 1: AI & Machine Learning Workshop -->
+        
             <div class="event-card">
-                <!-- Placeholder for event image -->
+              
                 <div class="event-image"></div>
                 <div class="event-content">
-                    <!-- Event metadata: date, time, and category -->
+                 
                     <div class="event-meta">
                         <span class="event-date">📅 April 25, 2026</span>
                         <span class="event-time">⏰ 2:00 PM - 4:00 PM</span>
-                        <!-- Category badge - changes color based on event type -->
+                      
                         <span class="event-category-badge">Workshop</span>
                     </div>
-                    <!-- Event title -->
+                  
                     <h3>AI & Machine Learning Fundamentals</h3>
-                    <!-- Event description - brief overview -->
+                 
                     <p>Learn the basics of AI and ML. This workshop covers neural networks, supervised learning, and practical applications.</p>
-                    <!-- Event details: location, speaker, capacity -->
+                 
                     <div class="event-details">
                         <p><strong>Location:</strong> Tech Lab, Room 301</p>
                         <p><strong>Speaker:</strong> Dr. Sarah Williams</p>
                         <p><strong>Capacity:</strong> 50 participants</p>
                     </div>
-                    <!-- Registration button (connects to backend later) -->
+                 
                     <button class="register-btn">Register Now</button>
                 </div>
             </div>
 
-            <!-- Event Card 2: Hackathon Event -->
+        
             <div class="event-card">
                 <div class="event-image"></div>
                 <div class="event-content">
                     <div class="event-meta">
                         <span class="event-date">📅 May 5-6, 2026</span>
                         <span class="event-time">⏰ 10:00 AM - 6:00 PM</span>
-                        <!-- Hackathon badge has different color -->
+                      
                         <span class="event-category-badge hackathon-badge">Hackathon</span>
                     </div>
                     <h3>48-Hour Innovation Hackathon 2026</h3>
@@ -93,14 +92,14 @@
                 </div>
             </div>
 
-            <!-- Event Card 3: Quantum Computing Seminar -->
+            
             <div class="event-card">
                 <div class="event-image"></div>
                 <div class="event-content">
                     <div class="event-meta">
                         <span class="event-date">📅 April 28, 2026</span>
                         <span class="event-time">⏰ 3:00 PM - 4:30 PM</span>
-                        <!-- Seminar badge has teal color -->
+                      
                         <span class="event-category-badge seminar-badge">Seminar</span>
                     </div>
                     <h3>Future of Quantum Computing</h3>
@@ -114,14 +113,14 @@
                 </div>
             </div>
 
-            <!-- Event Card 4: Networking Event -->
+       
             <div class="event-card">
                 <div class="event-image"></div>
                 <div class="event-content">
                     <div class="event-meta">
                         <span class="event-date">📅 May 1, 2026</span>
                         <span class="event-time">⏰ 5:00 PM - 7:00 PM</span>
-                        <!-- Networking badge has orange color -->
+                       
                         <span class="event-category-badge networking-badge">Networking</span>
                     </div>
                     <h3>Tech Professionals Networking Mixer</h3>
@@ -135,7 +134,7 @@
                 </div>
             </div>
 
-            <!-- Event Card 5: Web Development Workshop -->
+          
             <div class="event-card">
                 <div class="event-image"></div>
                 <div class="event-content">
@@ -155,7 +154,7 @@
                 </div>
             </div>
 
-            <!-- Event Card 6: Blockchain Seminar -->
+           
             <div class="event-card">
                 <div class="event-image"></div>
                 <div class="event-content">
@@ -177,8 +176,7 @@
         </div>
     </section>
 
-    <!-- Past Events Section -->
-    <!-- Highlights previous successful events and provides access to related resources -->
+    
     <section class="past-events">
         <h2>Past Events Highlights</h2>
         <div class="past-events-container">
@@ -186,43 +184,40 @@
             <div class="past-event">
                 <h3>AI Conference 2025</h3>
                 <p>Hosted by 200+ attendees. Great insights on the future of AI in various industries.</p>
-                <!-- Links to event gallery or resources -->
+                
                 <a href="#">View Photos</a>
             </div>
 
-            <!-- Past Event 2 -->
             <div class="past-event">
                 <h3>Spring Hackathon 2025</h3>
                 <p>12 teams competed and created amazing projects. Winners received mentorship and funding.</p>
-                <!-- Links to winners announcement -->
+              
                 <a href="#">View Winners</a>
             </div>
 
-            <!-- Past Event 3 -->
+      
             <div class="past-event">
                 <h3>Data Science Workshop</h3>
                 <p>80 participants learned advanced data analysis and visualization techniques.</p>
-                <!-- Links to workshop resources and materials -->
+               
                 <a href="#">View Resources</a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Subscription Section -->
-    <!-- Allows users to subscribe for event notifications -->
+
     <section class="newsletter-section">
         <h2>Stay Updated</h2>
         <p>Subscribe to our newsletter to get notified about upcoming events</p>
-        <!-- Newsletter signup form -->
+      
         <form class="newsletter-form">
-            <!-- Email input field -->
             <input type="email" placeholder="Enter your email" required>
-            <!-- Submit button (will be connected to backend) -->
+     
             <button type="submit">Subscribe</button>
         </form>
     </section>
 
-    <!-- Footer - Standard footer across all pages -->
+   
     <footer>
         <p>&copy; 2024 Research & Innovation Club. All rights reserved.</p>
     </footer>

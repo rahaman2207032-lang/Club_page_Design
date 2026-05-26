@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="aboutdemo.css">
 </head>
 <body>
-    <!-- Navigation Bar - Fixed at top of page for easy navigation -->
+
     <nav class="navbar">
         <div class="logo">
-            <!-- Club Logo and Name -->
+           
             <h2>Research & Innovation Club</h2>
         </div>
         <!-- Navigation Links to all pages -->
@@ -31,18 +31,17 @@
         </ul>
     </nav>
 
-    <!-- Hero Section - Main banner with page title and description -->
+
     <section class="hero-section">
         <h1>About Our Club</h1>
         <p class="subtitle">Empowering Innovation and Research Excellence</p>
     </section>
 
-    <!-- Mission, Vision & Values Section -->
-    <!-- This section contains three cards describing the core principles of the club -->
+ 
     <section class="mission-vision">
        <div class="staircase-container"> 
         
-            <!-- Mission Card - What the club aims to do -->
+     
             <div class="mission-card stair-1" >
                 <div class="floating-wrapper">
                 <div class="card-icon">🎯</div>
@@ -51,7 +50,7 @@
             </div>
             </div>
 
-            <!-- Vision Card - What the club aspires to become -->
+       
             <div class="vision-card stair-2">
                   <div class="floating-wrapper">
                 <div class="card-icon">✨</div>
@@ -59,7 +58,7 @@
                 <p>To become a leading hub for research and innovation, nurturing creative minds and producing groundbreaking projects that make a positive impact on society.</p>
             </div>
           </div>
-            <!-- Values Card - Core principles the club follows -->
+          
             <div class="values-card stair-3">
                   <div class="floating-wrapper">
                 <div class="card-icon">💡</div>
@@ -71,26 +70,25 @@
         </div>
     </section>
 
-    <!-- Team Members Section -->
-    <!-- Displays the leadership team with their roles and contact information -->
+
     <section class="team-section">
         <h2>Meet Our Leadership Team</h2>
         <div class="team-container">
-            <!-- Individual Team Member Card 1 -->
+          
             <div class="team-card">
-                <!-- Placeholder for team member image -->
+         
                 <div class="team-image"></div>
                 <h3>Faysal Mahmud</h3>
                 <p class="position">Club President</p>
                 <p class="bio">Leading the club with vision and passion for innovation</p>
-                <!-- Social media links for team member -->
+            
                 <div class="social-links">
                     <a href="#">LinkedIn</a>
                     <a href="#">Twitter</a>
                 </div>
             </div>
 
-            <!-- Individual Team Member Card 2 -->
+          
             <div class="team-card">
                 <div class="team-image"></div>
                 <h3>Rubaiya Raha</h3>
@@ -102,7 +100,7 @@
                 </div>
             </div>
 
-            <!-- Individual Team Member Card 3 -->
+          
             <div class="team-card">
                 <div class="team-image"></div>
                 <h3>Ali Hassan</h3>
@@ -114,7 +112,7 @@
                 </div>
             </div>
 
-            <!-- Individual Team Member Card 4 -->
+        
             <div class="team-card">
                 <div class="team-image"></div>
                 <h3>Zaina Rahaman</h3>
@@ -128,30 +126,29 @@
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <!-- Showcases key metrics and achievements of the club -->
+
     <section class="stats-section">
         <h2>Our Impact</h2>
         <div class="stats-container">
-            <!-- Statistic Card 1 - Number of active members -->
+   
             <div class="stat-card">
                 <h3>500+</h3>
                 <p>Active Members</p>
             </div>
 
-            <!-- Statistic Card 2 - Completed projects count -->
+          
             <div class="stat-card">
                 <h3>50+</h3>
                 <p>Completed Projects</p>
             </div>
 
-            <!-- Statistic Card 3 - Annual events hosted -->
+          
             <div class="stat-card">
                 <h3>30+</h3>
                 <p>Annual Events</p>
             </div>
 
-            <!-- Statistic Card 4 - Research publications -->
+     
             <div class="stat-card">
                 <h3>15+</h3>
                 <p>Research Publications</p>
@@ -159,12 +156,11 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <!-- Shows the history and milestones of the club in chronological order -->
+
     <section class="timeline-section">
         <h2>Our Journey</h2>
         <div class="timeline">
-            <!-- Timeline Item 1 - Club founding year -->
+      
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>2020</h3>
@@ -172,7 +168,7 @@
                 </div>
             </div>
 
-            <!-- Timeline Item 2 - First achievements -->
+           
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>2021</h3>
@@ -180,7 +176,6 @@
                 </div>
             </div>
 
-            <!-- Timeline Item 3 - Growth milestone -->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>2022</h3>
@@ -188,7 +183,7 @@
                 </div>
             </div>
 
-            <!-- Timeline Item 4 - Latest achievements -->
+        
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>2024</h3>
@@ -198,25 +193,24 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <!-- Provides contact information and location details -->
+   
     <section class="contact-section">
         <h2>Get In Touch</h2>
         <p>Have questions about our club? We'd love to hear from you!</p>
         <div class="contact-info">
-            <!-- Email Contact Card -->
+
             <div class="contact-card">
                 <h4>📧 Email</h4>
                 <p>contact@innovationclub.com</p>
             </div>
 
-            <!-- Location Contact Card -->
+ 
             <div class="contact-card">
                 <h4>📍 Location</h4>
                 <p>Research Building, Floor 3</p>
             </div>
 
-            <!-- Office Hours Contact Card -->
+       
             <div class="contact-card">
                 <h4>🕐 Office Hours</h4>
                 <p>Mon-Fri: 3 PM - 6 PM</p>
@@ -224,7 +218,7 @@
         </div>
     </section>
      
-    <!-- Footer - Standard footer with copyright information -->
+   
     <footer>
         <p>&copy; 2024 Research & Innovation Club. All rights reserved.</p>
     </footer>

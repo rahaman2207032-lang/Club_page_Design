@@ -80,7 +80,7 @@
         </div>
     </section>
 
-    <!--All Projects--Grid Display-->
+
 <section class="project-section">
     <h2>All Projects</h2>
     <div class="stack-wrapper">
