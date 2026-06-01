@@ -236,12 +236,13 @@ $is_logged_in = isset($_SESSION['fname']);
     <section class="newsletter-section">
         <h2>Stay Updated</h2>
         <p>Subscribe to our newsletter to get notified about upcoming events</p>
-      
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-     
-            <button type="submit">Subscribe</button>
+
+        <form class="newsletter-form" id="newsletter-form">
+            <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
+
+            <button type="submit" id="subscribe-btn">Subscribe</button>
         </form>
+        <div id="newsletter-message" style="margin-top: 10px; font-size: 0.85rem; text-align: center;"></div>
     </section>
 
    
@@ -250,24 +251,5 @@ $is_logged_in = isset($_SESSION['fname']);
     </footer>
     <script src="script.js"></script>
 
-    <script>
-    function toggleDashboard() {
-        const dashboard = document.getElementById('dashboard');
-        const overlay = document.getElementById('overlay');
-        if (dashboard) {
-            dashboard.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-    }
-
-    function closeDashboard() {
-        const dashboard = document.getElementById('dashboard');
-        const overlay = document.getElementById('overlay');
-        if (dashboard) {
-            dashboard.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-    }
-    </script>
 </body>
 </html>

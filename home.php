@@ -51,6 +51,7 @@ $is_logged_in = isset($_SESSION['fname']);
                 <div class="user-email"><?php echo htmlspecialchars($_SESSION['email']); ?></div>
             </div>
             <div class="dashboard-actions">
+                <a href="update_profile.php" class="btn-logout">⚙️ Update Profile</a>
                 <a href="logout.php" class="btn-logout">🚪 Logout</a>
             </div>
         </div>
@@ -167,10 +168,11 @@ $is_logged_in = isset($_SESSION['fname']);
                 </div>
                 <div class="newsletter">
                     <h4>Subscribe to Newsletter</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" id="subscribe-btn">Subscribe</button>
                     </form>
+                    <div id="newsletter-message" style="margin-top: 10px; font-size: 0.85rem; text-align: center;"></div>
                 </div>
             </div>
 
@@ -191,26 +193,6 @@ $is_logged_in = isset($_SESSION['fname']);
 
 
 <script src="script.js"></script>
-
-<script>
-function toggleDashboard() {
-    const dashboard = document.getElementById('dashboard');
-    const overlay = document.getElementById('overlay');
-    if (dashboard) {
-        dashboard.classList.toggle('active');
-        overlay.classList.toggle('active');
-    }
-}
-
-function closeDashboard() {
-    const dashboard = document.getElementById('dashboard');
-    const overlay = document.getElementById('overlay');
-    if (dashboard) {
-        dashboard.classList.remove('active');
-        overlay.classList.remove('active');
-    }
-}
-</script>
 
 </body>
 </html>

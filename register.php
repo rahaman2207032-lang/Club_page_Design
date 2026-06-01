@@ -9,14 +9,10 @@ if (isset($_POST['submit'])) {
     $education = $_POST['education'];
     $mobile = $_POST['Mobile'];
     $dob = $_POST['dob'];
-    $image = $_POST['image']; 
+    $image = $_POST['image'];
 
-   
-    $connection = mysqli_connect('localhost', 'root', '', 'reg_db');
 
-    if (!$connection) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    include 'db_config.php';
 
     
     

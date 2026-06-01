@@ -26,6 +26,7 @@ $is_logged_in = isset($_SESSION['fname']);
                     <div class="user-email"><?php echo htmlspecialchars($_SESSION['email']); ?></div>
                 </div>
                 <div class="dashboard-actions">
+                    <a href="update_profile.php" class="btn-logout">⚙️ Update Profile</a>
                     <a href="logout.php" class="btn-logout">🚪 Logout</a>
                 </div>
             </div>
@@ -391,25 +392,5 @@ $is_logged_in = isset($_SESSION['fname']);
 </footer>
 
     <script src="script.js"></script>
-
-    <script>
-    function toggleDashboard() {
-        const dashboard = document.getElementById('dashboard');
-        const overlay = document.getElementById('overlay');
-        if (dashboard) {
-            dashboard.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-    }
-
-    function closeDashboard() {
-        const dashboard = document.getElementById('dashboard');
-        const overlay = document.getElementById('overlay');
-        if (dashboard) {
-            dashboard.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-    }
-    </script>
 </body>
 </html>

@@ -1,3 +1,24 @@
+// ============================================
+// SLIDING DASHBOARD (USER MENU) - GLOBAL FUNCTIONS
+// ============================================
+function toggleDashboard() {
+    const dashboard = document.getElementById('dashboard');
+    const overlay = document.getElementById('overlay');
+    if (dashboard) {
+        dashboard.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+}
+
+function closeDashboard() {
+    const dashboard = document.getElementById('dashboard');
+    const overlay = document.getElementById('overlay');
+    if (dashboard) {
+        dashboard.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+}
+
 let currentCardindex = 0;
 
 function flipCard(button) {
@@ -75,7 +96,7 @@ function nextCard() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const stats = document.querySelectorAll('.stat-number');
-    
+
     const countOptions = {
         threshold: 0.3, // Trigger when 30% of the section is visible
         rootMargin: "0px 0px -50px 0px"
@@ -88,10 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = entry.target;
                 const target = parseInt(card.getAttribute('data-target'));
                 let count = 0;
-                
+
                 // Calculate speed: higher targets need faster increments
-                const increment = target / 100; 
-                
+                const increment = target / 100;
+
                 const updateCount = () => {
                     if (count < target) {
                         count += increment;
@@ -101,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         card.innerText = target;
                     }
                 };
-                
+
                 updateCount();
                 observer.unobserve(card); // Stop watching once animated
             }
@@ -112,3 +133,46 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// ============================================
+// NEWSLETTER SUBSCRIPTION
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const newsletterForm = document.getElementById('newsletter-form');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            const messageDiv = document.getElementById('newsletter-message');
+
+            if (!email) {
+                messageDiv.textContent = '❌ Please enter an email!';
+                messageDiv.style.color = '#F44336';
+                return;
+            }
+
+            fetch('newsletter_handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'email=' + encodeURIComponent(email)
+            })
+            .then(response => response.json())
+            .then(data => {
+                messageDiv.textContent = data.message;
+                if (data.success) {
+                    messageDiv.style.color = '#4CAF50';
+                    document.getElementById('newsletter-email').value = '';
+                } else {
+                    messageDiv.style.color = '#F44336';
+                }
+            })
+            .catch(error => {
+                messageDiv.textContent = '❌ Error: ' + error;
+                messageDiv.style.color = '#F44336';
+                console.error('Newsletter error:', error);
+            });
+        });
+    }
+});

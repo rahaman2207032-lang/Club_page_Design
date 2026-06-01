@@ -8,12 +8,8 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-  
-    $connection = mysqli_connect('localhost', 'root', '', 'reg_db');
 
-    if (!$connection) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    include 'db_config.php';
 
  
     if (empty($fname) || empty($lname) || empty($email) || empty($password)) {

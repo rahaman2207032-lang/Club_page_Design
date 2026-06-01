@@ -250,24 +250,5 @@ $is_logged_in = isset($_SESSION['fname']);
     </footer>
     <script src="script.js"></script>
 
-    <script>
-    function toggleDashboard() {
-        const dashboard = document.getElementById('dashboard');
-        const overlay = document.getElementById('overlay');
-        if (dashboard) {
-            dashboard.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-    }
-
-    function closeDashboard() {
-        const dashboard = document.getElementById('dashboard');
-        const overlay = document.getElementById('overlay');
-        if (dashboard) {
-            dashboard.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-    }
-    </script>
 </body>
 </html>
