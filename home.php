@@ -1,16 +1,20 @@
+<?php
+session_start();
+$is_logged_in = isset($_SESSION['fname']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
    
 <nav class="nav">
-     <div class="logo">
+     <div class="logo <?php if ($is_logged_in): ?>user-logged-in<?php endif; ?>" <?php if ($is_logged_in): ?>onclick="toggleDashboard()"<?php endif; ?>>
         <h2>RIC</h2>
      </div>
 
@@ -25,12 +29,34 @@
         <li><a href="home.php">Home</a></li>
         <li><a href="projects.php">Projects</a></li>
          <li><a href="events.php">Events</a></li>
-        <li><a href="about.php">About Us</a></li>   
+        <li><a href="about.php">About Us</a></li>
         <li><a href="register.php">Register</a></li>
         <li><a href="login.php">Login</a></li>
 
     </ul>
 </nav>
+
+<!-- Sliding Sidebar -->
+<?php if ($is_logged_in): ?>
+<div class="dashboard-overlay" id="overlay" onclick="closeDashboard()"></div>
+<div class="sliding-dashboard" id="dashboard">
+    <div class="dashboard-content">
+        <div class="dashboard-header">
+            <h3>Menu</h3>
+            <button class="close-dashboard" onclick="closeDashboard()">&times;</button>
+        </div>
+        <div class="dashboard-body">
+            <div class="user-profile">
+                <div class="user-name"><?php echo htmlspecialchars($_SESSION['fname'] . ' ' . $_SESSION['lname']); ?></div>
+                <div class="user-email"><?php echo htmlspecialchars($_SESSION['email']); ?></div>
+            </div>
+            <div class="dashboard-actions">
+                <a href="logout.php" class="btn-logout">🚪 Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
 
  <section class="hero-section">
   <div><h2>Research & Innovation Club</h2>
@@ -165,6 +191,26 @@
 
 
 <script src="script.js"></script>
+
+<script>
+function toggleDashboard() {
+    const dashboard = document.getElementById('dashboard');
+    const overlay = document.getElementById('overlay');
+    if (dashboard) {
+        dashboard.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+}
+
+function closeDashboard() {
+    const dashboard = document.getElementById('dashboard');
+    const overlay = document.getElementById('overlay');
+    if (dashboard) {
+        dashboard.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+}
+</script>
 
 </body>
 </html>

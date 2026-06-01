@@ -1,16 +1,42 @@
+<?php
+session_start();
+$is_logged_in = isset($_SESSION['fname']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Research & Innovation Club</title>
-    <link rel="stylesheet" href="aboutdemo.css">
+    <link rel="stylesheet" href="aboutdemo.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
+
+<?php if ($is_logged_in): ?>
+<div class="dashboard-overlay" id="overlay" onclick="closeDashboard()"></div>
+<div class="sliding-dashboard" id="dashboard">
+    <div class="dashboard-content">
+        <div class="dashboard-header">
+            <h3>Menu</h3>
+            <button class="close-dashboard" onclick="closeDashboard()">&times;</button>
+        </div>
+        <div class="dashboard-body">
+            <div class="user-profile">
+                <div class="user-name"><?php echo htmlspecialchars($_SESSION['fname'] . ' ' . $_SESSION['lname']); ?></div>
+                <div class="user-email"><?php echo htmlspecialchars($_SESSION['email']); ?></div>
+            </div>
+            <div class="dashboard-actions">
+                <a href="logout.php" class="btn-logout">🚪 Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
     <nav class="navbar">
-        <div class="logo">
-           
+        <div class="logo <?php if ($is_logged_in): ?>user-logged-in<?php endif; ?>" <?php if ($is_logged_in): ?>onclick="toggleDashboard()"<?php endif; ?>>
+
             <h2>Research & Innovation Club</h2>
         </div>
         <!-- Navigation Links to all pages -->
@@ -223,5 +249,25 @@
         <p>&copy; 2024 Research & Innovation Club. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+
+    <script>
+    function toggleDashboard() {
+        const dashboard = document.getElementById('dashboard');
+        const overlay = document.getElementById('overlay');
+        if (dashboard) {
+            dashboard.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    }
+
+    function closeDashboard() {
+        const dashboard = document.getElementById('dashboard');
+        const overlay = document.getElementById('overlay');
+        if (dashboard) {
+            dashboard.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    }
+    </script>
 </body>
 </html>

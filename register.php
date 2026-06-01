@@ -1,3 +1,101 @@
+<?php
+if (isset($_POST['submit'])) {
+   
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $gender = $_POST['gender'];
+    $education = $_POST['education'];
+    $mobile = $_POST['Mobile'];
+    $dob = $_POST['dob'];
+    $image = $_POST['image']; 
+
+   
+    $connection = mysqli_connect('localhost', 'root', '', 'reg_db');
+
+    if (!$connection) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    
+    
+ 
+    if (empty($fname) || empty($lname) || empty($email) || empty($password) || 
+        empty($gender) || empty($education) || empty($mobile) || empty($dob)) {
+        echo "<script>alert('❌ Error: All fields are required!');</script>";
+        mysqli_close($connection);
+        exit();
+    }
+
+   
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('❌ Error: Invalid email format!');</script>";
+        mysqli_close($connection);
+        exit();
+    }
+
+  
+    $check_email = "SELECT * FROM register WHERE email = '$email'";
+    $result = mysqli_query($connection, $check_email);
+    
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script>alert('❌ Error: Email already exists! Please use a different email.');</script>";
+        mysqli_close($connection);
+        exit();
+    }
+
+
+    if (strlen($password) < 8) {
+        echo "<script>alert('❌ Error: Password must be at least 8 characters long!');</script>";
+        mysqli_close($connection);
+        exit();
+    }
+
+    if (!preg_match('/[A-Z]/', $password)) {
+        echo "<script>alert('❌ Error: Password must contain at least 1 uppercase letter!');</script>";
+        mysqli_close($connection);
+        exit();
+    }
+
+    if (!preg_match('/[0-9]/', $password)) {
+        echo "<script>alert('❌ Error: Password must contain at least 1 number!');</script>";
+        mysqli_close($connection);
+        exit();
+    }
+
+   
+    if (!preg_match('/^[0-9]{10,15}$/', $mobile)) {
+        echo "<script>alert('❌ Error: Mobile number must be 10-15 digits!');</script>";
+        mysqli_close($connection);
+        exit();
+    }
+
+  
+    $stored_password = $password;
+
+
+    $insert_query = "INSERT INTO register (fname, lname, email, password, gender, education, mobile, dob, image) 
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = mysqli_prepare($connection, $insert_query);
+    mysqli_stmt_bind_param($stmt, "sssssssss", $fname, $lname, $email, $stored_password, $gender, $education, $mobile, $dob, $image);
+
+    $insert = mysqli_stmt_execute($stmt);
+
+    if ($insert) {
+        echo "<script>alert(' Registration Successful! Your account has been created.');</script>";
+        echo "<script>window.location.href='login.php';</script>";
+    } else {
+        echo "<script>alert(' Error: Registration failed - " . mysqli_error($connection) . "');</script>";
+    }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($connection);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +110,7 @@
         Your browser does not support the video tag.
     </video>
 
-    <form  action="/actionpage.php" method="post">
+    <form  action="register.php" method="post">
   <div class="logincontainer">   
       <h1 align="center" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Register</h1>   
      <label for="fname" class="tag">First Name:</label>
@@ -43,7 +141,7 @@
         <input type="file" id="image" name="image"><br><br>
         <br>
      <label for="submit" class="tag"></label>
-     <input type ="submit" value ="Submit" class="button">
+     <input type ="submit" value="Submit" name="submit" class="button">
 
     </form>
 </div>
