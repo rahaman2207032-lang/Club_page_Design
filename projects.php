@@ -384,7 +384,7 @@ $is_logged_in = isset($_SESSION['fname']);
     <h2>Want to Start Your Own Project?</h2>
     <p>Join our club and collaborate on cutting-edge projects with passionate innovators</p>
     <div class="cta-buttons">
-        <button class="btn-primary"><a href="register.html">Join Our Club</a></button>
+        <button class="btn-primary"><a href="register.php">Join Our Club</a></button>
      </div> 
 </section>
 <footer>
