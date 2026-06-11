@@ -65,27 +65,7 @@ $is_logged_in = isset($_SESSION['fname']);
    
 </section>
 
-<!-- <section class="incubator-search">
- <h2 class="section-title">Incubator Search</h2>
- <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
-    <button class="filter-btn" data-filter="robotics">Robotics</button>
-    <button class="filter-btn" data-filter="environment">Environment</button>
-    <button class="filter-btn" data-filter="education">Education</button>
 
-
-
-
-
-
-
- </div>
-
-
-
-
-</section> -->
 
     <section class="pulse-section">
         <div class="pulse-container">
