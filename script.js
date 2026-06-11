@@ -1,6 +1,4 @@
-// ============================================
-// SLIDING DASHBOARD (USER MENU) - GLOBAL FUNCTIONS
-// ============================================
+
 function toggleDashboard() {
     const dashboard = document.getElementById('dashboard');
     const overlay = document.getElementById('overlay');
@@ -133,9 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ============================================
-// NEWSLETTER SUBSCRIPTION
-// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const newsletterForm = document.getElementById('newsletter-form');
 

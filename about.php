@@ -8,7 +8,7 @@ $is_logged_in = isset($_SESSION['fname']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Research & Innovation Club</title>
-    <link rel="stylesheet" href="aboutdemo.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="about.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
